@@ -35,10 +35,12 @@ class EntryController extends Controller
     }
 
     public function edit(Entry $entry){
+        $this->authorize('update', $entry);
         return view('entries.edit', compact('entry'));
     }
 
     public function update(Request $request, Entry $entry){
+        $this->authorize('update', $entry);
         //dd($request->all());
 
         $validatedData = $request->validate([
