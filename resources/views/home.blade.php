@@ -14,6 +14,10 @@
                         </div>
                     @endif
                         
+                    @if($entries->isEmpty())
+                    <p>No haz publicado Entradas</p>
+                    @else
+
                     <p>Mis Entradas</p>
 
                     <ul>
@@ -23,6 +27,7 @@
                             </li> 
                         @endforeach
                     </ul>
+                    @endif
                 </div>
             </div>
         </div>
